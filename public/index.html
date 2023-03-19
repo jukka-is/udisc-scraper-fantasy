@@ -5,13 +5,50 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fantasy Disc Golf 2023 - Jukka vs. Pekka</title>
-  <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Fantasy Disc Golf 2023</title>
 </head>
 
 <body>
-  <h1>Fantasy Disc Golf 2023 - Jukka vs. Pekka</h1>
-  <button id="fetch-btn">Hae tulokset</button>
+  <div class="container" id="app" v-cloak>
+    <main>
+      <header class="header">
+        <h1 class="main-title">Fantasy Disc Golf 2023</h1>
+        <button @click="getScores" class="button" :disabled="isFetching()">Hae tulokset</button>
+        <p v-if="status === 'fetching'" class="message">Haetaan tuloksia, odota hetki ...</p>
+        <p v-if="status === 'error'" class="message message--error">Tulosten noutaminen Udiscistä ei onnistunut, kokeile
+          uudelleen</p>
+      </header>
+
+      <div class="results">
+
+        <div v-for="(team, index) in teams" class="team-card" :data-loading="isFetching()" :key=`team-${index}`>
+          <div class="team-card__header">
+            <h2 class="team-card__title">Team {{ team.name }}</h2>
+          </div>
+          <div class="team-card__content">
+            <ul class="team-card__list">
+              <li v-for="player in team.players" class="team-card__list-item" :data-category="player.category"
+                :key=`${team}-${player.id}` :data-included="player.included">
+                <span data-field="name">{{player.name}}</span>
+                <span data-field="points">{{ displayPoints(player.points) }}</span>
+              </li>
+            </ul>
+            <div class="team-card__total">
+              <span data-field="name">Yhteensä</span>
+              <span data-field="score">{{ calculateTotals(team) }}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

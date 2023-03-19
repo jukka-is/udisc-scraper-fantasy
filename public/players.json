@@ -3,108 +3,126 @@
     "name": "Ricky Wysocki",
     "team": "jukka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "01"
   },
   {
     "name": "Gannon Buhr",
     "team": "jukka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "02"
   },
   {
     "name": "Paul McBeth",
     "team": "jukka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "03"
   },
   {
     "name": "Drew Gibson",
     "team": "jukka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "04"
   },
   {
     "name": "Kyle Klein",
     "team": "jukka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "05"
   },
   {
     "name": "Mason Ford",
     "team": "jukka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "06"
   },
   {
     "name": "Väinö Mäkelä",
     "team": "jukka",
     "category": "fi",
-    "points": null
+    "points": null,
+    "id": "07"
   },
   {
     "name": "Lauri Lehtinen",
     "team": "jukka",
     "category": "fi",
-    "points": null
+    "points": null,
+    "id": "08"
   },
   {
     "name": "Joona Heinänen",
     "team": "jukka",
     "category": "fi",
-    "points": null
+    "points": null,
+    "id": "09"
   },
   {
     "name": "Eagle McMahon",
     "team": "pekka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "10"
   },
   {
     "name": "Calvin Heimburg",
     "team": "pekka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "11"
   },
   {
     "name": "Simon Lizotte",
     "team": "pekka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "12"
   },
   {
     "name": "Chris Dickerson",
     "team": "pekka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "13"
   },
   {
     "name": "Matthew Orum",
     "team": "pekka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "14"
   },
   {
     "name": "Joel Freeman",
     "team": "pekka",
     "category": "general",
-    "points": null
+    "points": null,
+    "id": "15"
   },
   {
     "name": "Niklas Anttila",
     "team": "pekka",
     "category": "fi",
-    "points": null
+    "points": null,
+    "id": "16"
   },
   {
     "name": "Kristian Kuoksa",
     "team": "pekka",
     "category": "fi",
-    "points": null
+    "points": null,
+    "id": "17"
   },
   {
     "name": "Daniel Davidsson",
     "team": "pekka",
     "category": "fi",
-    "points": null
+    "points": null,
+    "id": "18"
   }
 ]

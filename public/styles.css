@@ -1,0 +1,206 @@
+:root {
+  --color-grey-dark: #333333;
+  --color-grey-medium: #999999;
+  --color-grey-light: #d8d8d8;
+  --color-white: #fff;
+  --color-primary: #245953;
+  --color-team-1: #408e91;
+  --color-team-1-light: rgba(64, 142, 145, 0.3);
+  --color-team-2: #e49393;
+  --color-team-2-light: rgba(228, 147, 147, 0.3);
+  --color-warning: #8b0000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  /* System Fonts as used by GitHub */
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  font-size: 1rem;
+  line-height: 1.7rem;
+  color: var(--color-grey-dark);
+}
+
+.container {
+  background-color: var(--color-grey-light);
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem;
+}
+
+main {
+  padding: 2rem;
+  background-color: var(--color-white);
+  min-height: 90vh;
+}
+
+.header {
+  position: relative;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.message {
+  position: absolute;
+  text-align: center;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  font-size: 0.9rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.2rem;
+}
+
+.message--error {
+  background-color: var(--color-warning);
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.header > * {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.button {
+  color: var(--color-white);
+  line-height: 1;
+  background: var(--color-primary);
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 100vw;
+  cursor: pointer;
+  transition: all 170ms ease-in;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: rgba(36, 89, 83, 0.9);
+}
+
+.button:disabled {
+  background: var(--color-grey-medium);
+  cursor: not-allowed;
+}
+
+.results {
+  display: flex;
+  gap: 2rem;
+}
+
+.results > * {
+  flex-grow: 1;
+  flex-basis: 100%;
+  transition: all 170ms ease-in;
+}
+
+.team-card:nth-child(odd) {
+  --theme-color: var(--color-team-1);
+  background-color: var(--color-team-1-light);
+}
+
+.team-card:nth-child(even) {
+  --theme-color: var(--color-team-2);
+  background-color: var(--color-team-2-light);
+}
+
+.team-card[data-loading='true'] {
+  --theme-color: var(--color-grey-medium);
+  background-color: var(--color-grey-light) !important;
+}
+
+.team-card__header {
+  background-color: var(--theme-color);
+  padding: 1rem;
+  color: var(--color-white);
+}
+
+.team-card__title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.team-card__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.team-card__list-item,
+.team-card__total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.2rem;
+  min-width: 220px;
+}
+
+.team-card__list-item {
+  border-bottom: 1px solid var(--color-team-1-light);
+}
+
+.team-card__list-item:last-child {
+  border-bottom: 3px solid var(--theme-color);
+}
+
+.team-card__list-item > span[data-field='points'] {
+  font-weight: 500;
+}
+
+.team-card__list-item[data-included='false'] {
+  color: var(--color-grey-medium);
+}
+
+.team-card__list-item[data-included='false'] > span[data-field='points'] {
+  font-weight: 400;
+}
+
+.team-card__list-item[data-category='fi'] > span[data-field='name']::after {
+  content: '\01F1EB \01F1EE';
+  margin-left: 0.5rem;
+}
+
+.team-card__total {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .results {
+    flex-wrap: wrap;
+  }
+}
