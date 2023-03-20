@@ -8,11 +8,13 @@ const app = Vue.createApp({
   },
   watch: {
     players(data) {
+      console.log('players data updated');
       this.updateTeams(data);
     }
   },
   methods: {
     updateTeams(players) {
+      console.log('updating teams data');
       const teamNames = [...new Set(players.map(player => player.team))];
       this.teams = teamNames.map(teamName => {
         return {
@@ -54,6 +56,7 @@ const app = Vue.createApp({
       return this.displayPoints(points);
     },
     async getScores() {
+      console.log('getting scores from udisc');
       try {
         this.status = 'fetching';
         const response = await fetch('/.netlify/functions/udisc-scraper', {
@@ -66,6 +69,7 @@ const app = Vue.createApp({
           body: JSON.stringify(this.players)
         });
         const json = await response.json();
+        console.log('received', json);
         this.players = json.data;
         this.status = 'success';
       } catch {

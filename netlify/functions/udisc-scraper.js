@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 
 export const handler = async (event, context) => {
   const players = JSON.parse(event.body);
+
   let browser = null;
   console.log('spawning chrome headless');
   try {
